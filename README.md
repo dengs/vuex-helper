@@ -1,6 +1,6 @@
 ![avatar](/logo.png ':size=480')
 # Vuex Helper
-vuex 辅助工具模块
+vuex 模块化后的辅助工具模块
 ## 概述
 > varsion：`v1.0.1`
 <br>author：`cbtak` <cbtak@hotmail.com>
