@@ -9,7 +9,7 @@ vuex 模块化后的辅助工具模块
   $store.getters['context/userInfo']
   $store.dispatch('context/setUserInfo', user)
 ```
-> 使用 `VuexHelper` 将模块化后的 `vue.$store` 展开为对象属性方式访问，提供三个属性对象：`{ modules, getters, actions }`，以简化获取getters/调用actions的代码结构
+> 使用 `VuexHelper` 将模块化后的 `store` 展开为对象属性方式访问，提供三个属性对象：`{ modules, getters, actions }`，以简化获取getters/调用actions的代码结构
 
 ## 安装
 > npm 安装：
@@ -33,8 +33,10 @@ yarn add @cbtak/vuex-helper
 
 ### 调用示例
 ```js
+  // vuex
+  import store from './store'
   // VuexHelper 实例
-  const vuexHelper = new VuexHelper(vue.$store)
+  const vuexHelper = new VuexHelper(store)
   // 解构 modules, getters, actions
   const { modules, getters, actions } = vuexHelper
 
@@ -49,7 +51,7 @@ yarn add @cbtak/vuex-helper
 #### `注：未启用 namespaced 的模块的 getters、actions 会直接挂载在 VuexHelper 实例的 getters、actions 及 modules.getters、modules.actions 属性的根级下，直接获取/调用即可，如：`
 ```js
   // VuexHelper 实例
-  const vuexHelper = new VuexHelper(vue.$store)
+  const vuexHelper = new VuexHelper(store)
   // vuexHelper.getters 上获取
   let orderList = vuexHelper.getters.orderList
   // vuexHelper.modules.getters 上获取
