@@ -1,7 +1,7 @@
 {
   "name": "@cbtak/vuex-helper",
   "version": "1.0.0",
-  "description": "vuex helper",
+  "description": "vuex 模块化后的辅助工具模块",
   "main": "lib/VuexHelper.js",
   "repository": {
     "type": "git",
@@ -9,10 +9,16 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack -p"
   },
   "keywords": [
-    "vuex"
+    "vue",
+    "vuex",
+    "vuex-helper",
+    "cbtak",
+    "cbtak/vuex-helper",
+    "node",
+    "node-module"
   ],
   "author": "cbtak <cbtak@hotmail.com>",
   "license": "ISC",
