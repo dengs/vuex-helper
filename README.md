@@ -4,14 +4,12 @@ vuex 辅助工具模块
 ## 概述
 > varsion：`v1.0.1`
 <br>author：`cbtak` <cbtak@hotmail.com>
-<br/>
-  `Vuex` 模块化启用 `namespaced` 后, 模块访问方式有些不适应，不习惯用"/"方式表示模块对象层次，如：
-  
+<br>`Vuex` 模块化启用 `namespaced` 后, 模块访问方式有些不适应，不习惯用"/"方式表示模块对象层次，如：
 ```js
   $store.getters['context/userInfo']
   $store.dispatch('context/setUserInfo', user)
 ```
-  使用 `VuexHelper` 将模块化后的 `vue.$store` 展开为对象属性方式访问，提供三个访问对象：`{ modules, getters, actions }`，将简化访问代码结构
+> 使用 `VuexHelper` 将模块化后的 `vue.$store` 展开为对象属性方式访问，提供三个访问对象：`{ modules, getters, actions }`，将简化访问代码结构
 
 ## 安装
 > npm 安装：
@@ -48,6 +46,17 @@ yarn add @cbtak/vuex-helper
   let userInfo = getters.context.userInfo
   actions.context.setUserInfo({name: 'cbtak'})
 ```
-#### `## 注：未启用 namespaced 的模块会直接挂接在 getters、actions 及 modules.getters、modules.actions 的根级下，直接访问即可`
+#### `注：未启用 namespaced 的模块的 getters、actions 会直接挂接在 VuexHelper 实例的 getters、actions 及 modules.getters、modules.actions 属性的根级下，直接访问即可，如：`
+```js
+  const vuexHelper = new VuexHelper(vue.$store)
+  // vuexHelper.getters 上获取
+  let orderList = vuexHelper.getters.orderList
+  // vuexHelper.modules.getters 上获取
+  let orderList = vuexHelper.modules.getters.orderList
+  // vuexHelper.actions 上调用 action
+  vuexHelper.actions.setOrderList([{order_id: '001'}, {order_id: '002'}])
+  // vuexHelper.modules.actions 上调用 action
+  vuexHelper.modules.actions.setOrderList([{order_id: '001'}, {order_id: '002'}])
+```
 
 Powered by cbtak <cbtak@hotmail.com>
