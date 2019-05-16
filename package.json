@@ -1,0 +1,28 @@
+{
+  "name": "vuex-helper",
+  "version": "1.0.0",
+  "description": "vuex helper",
+  "main": "lib/VuexHelper.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbtak/vuex-helper.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [
+    "vuex"
+  ],
+  "author": "cbtak <cbtak@hotmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.3.2",
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "@cbtak/nothing": "^1.0.16"
+  }
+}
