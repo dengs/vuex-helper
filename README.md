@@ -41,9 +41,8 @@ yarn add @cbtak/vuex-helper
   const { modules, getters, actions } = vuexHelper
 
   // 1. 使用 modules 访问 context 模块
-  const { context } = modules
-  let userInfo = context.getters.userInfo
-  context.actions.setUserInfo({name: 'cbtak'})
+  let userInfo = modules.context.getters.userInfo
+  modules.context.actions.setUserInfo({name: 'cbtak'})
 
   // 2. 使用 getters/actions 访问 context 模块
   let userInfo = getters.context.userInfo
