@@ -1,5 +1,5 @@
 {
-  "name": "vuex-helper",
+  "name": "@cbtak/vuex-helper",
   "version": "1.0.0",
   "description": "vuex helper",
   "main": "lib/VuexHelper.js",
